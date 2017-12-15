@@ -12,21 +12,17 @@
 
     function onClick() {
         $.ajax({
-            url: 'http://cloud.bmob.cn/ead27e69d1ab3fe4/sayHello',
+            url: 'http://cloud.bmob.cn/ead27e69d1ab3fe4/sayHello?name=jack',
             type: 'GET',
-//            headers: {
-//                'X-Bmob-Application-Id': 'f9e7ab1b046323c0f263a9ab19e1429c',
-//                'X-Bmob-REST-API-Key': 'fdc259f13547ef02a96865b37e8949b6'
-//            },
             contentType: 'application/json; charset=utf-8',
             dataType: 'jsonp',
             data: '',
             jsonp: 'callback',
             success: function (data) {
                 $("#foo").append(data.message);
-            }})
+            }
+        })
     }
-
 
 </script>
 <body>
