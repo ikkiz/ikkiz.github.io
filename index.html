@@ -1,1 +1,35 @@
-hello,world 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>hello, world</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script type="application/javascript">
+
+    function onClick() {
+        $.ajax({
+            url: 'http://cloud.bmob.cn/ead27e69d1ab3fe4/sayHello',
+            type: 'GET',
+//            headers: {
+//                'X-Bmob-Application-Id': 'f9e7ab1b046323c0f263a9ab19e1429c',
+//                'X-Bmob-REST-API-Key': 'fdc259f13547ef02a96865b37e8949b6'
+//            },
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'jsonp',
+            data: '',
+            jsonp: 'callback',
+            success: function (data) {
+                $("#foo").append(data.message);
+            }})
+    }
+
+
+</script>
+<body>
+    <input type="button" value="调用" onclick="onClick()"/>
+    <div id="foo"></div>
+</body>
+
+</html>
